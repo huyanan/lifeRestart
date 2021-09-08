@@ -382,10 +382,7 @@ class App{
                 const ua = navigator.userAgent.toLowerCase();
                 domtoimage.toJpeg(document.getElementById('lifeTrajectory'))
                     .then(function (dataUrl) {
-                        let link = document.createElement('a');
-                        link.download = '我的人生回放.jpeg';
-                        link.href = dataUrl;
-                        link.click();
+                        
                         $("#lifeTrajectory").removeClass("deleteFixed");
                         
                         // 微信内置浏览器，显示图片，需要用户单独保存
@@ -394,6 +391,11 @@ class App{
                             $('#endImage').one('click', function () {
                                 $(this).attr('src', '');
                             });
+                        } else {
+                            let link = document.createElement('a');
+                            link.download = '我的人生回放.jpeg';
+                            link.href = dataUrl;
+                            link.click();
                         }
 
                     });
