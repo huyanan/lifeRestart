@@ -8,19 +8,19 @@ module.exports = {
     static: [
       {
         directory: path.join(__dirname, 'data'),
-        publicPath: '/data',
+        publicPath: '/life_restart/data',
       },
       {
         directory: path.join(__dirname, 'public'),
-        publicPath: '/public',
+        publicPath: '/life_restart/public',
       },
       {
         directory: path.join(__dirname, 'view'),
-        publicPath: '/view',
+        publicPath: '/life_restart/view',
       },
       {
         directory: path.join(__dirname, 'src'),
-        publicPath: '/src',
+        publicPath: '/life_restart/src',
       },
     ],
   },
