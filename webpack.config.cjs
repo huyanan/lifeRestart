@@ -5,6 +5,9 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'eval-cheap-module-source-map',
   devServer: {
+    allowedHosts: [
+      '.huyanan.site'
+    ],
     static: [
       {
         directory: path.join(__dirname, 'data'),
