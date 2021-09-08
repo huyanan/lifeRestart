@@ -331,7 +331,7 @@ class App{
             <ul id="lifeTrajectory" class="lifeTrajectory"></ul>
             <button id="summary" class="mainbtn" style="top:auto; bottom:0.1rem; left:auto; right:50%; transform: translate(-2rem,-50%);">人生总结</button>
             <button id="domToImage" class="mainbtn" style="top:auto; bottom:0.1rem; left:50%; right:auto; transform: translate(2rem,-50%); display: none;">人生回放</button>
-            <div class="domToImage2wx">
+            <div class="domToImage2wx" style="max-height: 100%;overflow: auto;">
                 <img src="" id="endImage" />
             </div>
         </div>
@@ -387,9 +387,13 @@ class App{
                         link.href = dataUrl;
                         link.click();
                         $("#lifeTrajectory").removeClass("deleteFixed");
+                        
                         // 微信内置浏览器，显示图片，需要用户单独保存
                         if(ua.match(/MicroMessenger/i)=="micromessenger") {
                             $('#endImage').attr('src', dataUrl);
+                            $('#endImage').one('click', function () {
+                                $(this).attr('src', '');
+                            });
                         }
 
                     });
